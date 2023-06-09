@@ -1,31 +1,15 @@
-﻿class Bank : IBank
+﻿namespace Simple_Banking_System;
+public class Bank: Singleton<Bank>, IBank
 {
-    private static Bank? _instance;
-    private static readonly object padlock = new();
+    private readonly Dictionary<int, IAccountController> _accounts = new();
 
-    protected Bank() { }
-    public static Bank Instance
-    {
-        get
-        {
-            lock (padlock)
-            {
-                if (_instance == null) _instance = new Bank();
-                return _instance;
-            }
-        }
-    }
+    public IAccountController this[int key] => _accounts[key];
 
-    private Dictionary<int, Account> _accounts = new Dictionary<int, Account> { };
-
-    private Account getAccount(int id) => _accounts[id];
-    void addAccount(Account account) => _accounts[account.Number] = account;
-    public void deposit(int id, decimal amount) => getAccount(id).deposit(amount);
-    public void withdraw(int id, decimal amount) => getAccount(id).withdraw(amount);
-    public decimal balance(int id) => getAccount(id).Balance;
-    public bool accountExists(int id) => _accounts.ContainsKey(id);
-    public int getAccountsLength() => _accounts.Count;
-    public int createAccount()
+    public Bank() { }
+    
+    public int NextAccountIndex() => _accounts.Count + 1;
+    public bool AccountExists(int id) => _accounts.ContainsKey(id);
+    public int CreateAccount()
     {
         Console.WriteLine("Enter your name:");
         string name = Console.ReadLine() ?? "";
@@ -40,7 +24,10 @@
             name = Console.ReadLine() ?? "";
         }
         var account = new Account(name);
-        addAccount(account);
+        _accounts.Add(account.Number, new AccountController(account));
         return account.Number;
     }
+    
+    private IAccountController getAccount(int id) => _accounts[id];
+
 }

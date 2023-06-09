@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\azhu\\source\\repos\\Simple Banking System\\Simple Banking System\\Simple Banking System.csproj": {}
+    "C:\\Repos\\SimpleBankingAppCSharp\\Simple Banking System\\Simple Banking System.csproj": {}
   },
   "projects": {
-    "C:\\Users\\azhu\\source\\repos\\Simple Banking System\\Simple Banking System\\Simple Banking System.csproj": {
+    "C:\\Repos\\SimpleBankingAppCSharp\\Simple Banking System\\Simple Banking System.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\azhu\\source\\repos\\Simple Banking System\\Simple Banking System\\Simple Banking System.csproj",
+        "projectUniqueName": "C:\\Repos\\SimpleBankingAppCSharp\\Simple Banking System\\Simple Banking System.csproj",
         "projectName": "Simple Banking System",
-        "projectPath": "C:\\Users\\azhu\\source\\repos\\Simple Banking System\\Simple Banking System\\Simple Banking System.csproj",
+        "projectPath": "C:\\Repos\\SimpleBankingAppCSharp\\Simple Banking System\\Simple Banking System.csproj",
         "packagesPath": "C:\\Users\\azhu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\azhu\\source\\repos\\Simple Banking System\\Simple Banking System\\obj\\",
+        "outputPath": "C:\\Repos\\SimpleBankingAppCSharp\\Simple Banking System\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\azhu\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,25 +1,13 @@
-﻿class App : IApp
+﻿namespace Simple_Banking_System;
+
+public class App: Singleton<App>, IApp
 {
-    private static App? _instance;
-    private static readonly object padlock = new();
-
-    protected App() { }
-    public static App Instance
-    {
-        get
-        {
-            lock (padlock)
-            {
-                if (_instance == null) _instance = new App();
-                return _instance;
-            }
-        }
-    }
-
     private char _choice;
     private int _id;
     private decimal _amount;
-
+    
+    public App() { }
+    
     public void startApp()
     {
         while (true)
@@ -34,32 +22,34 @@
                 Console.WriteLine("");
             }
             if (_choice == 'f') return;
-            else if (_choice == 'a')
+            if (_choice == 'a')
             {
-                Console.WriteLine($"Your account number is {Bank.Instance.createAccount()}");
+                Console.WriteLine($"Your account number is {Bank.Instance.CreateAccount()}");
                 continue;
             }
             askForId("Please enter your bank account id.", out _id);
             if (!validAccountCheck(_id)) continue;
-            else if (_choice == 'd') Console.WriteLine($"Your balance is {Bank.Instance.balance(_id)}");
+            if (_choice == 'd')
+            {
+                Console.WriteLine($"Your balance is {Bank.Instance[_id].CheckBalance()}");
+            }
             else if (_choice == 'b')
             {
                 askForAmount("Enter amount you would like to deposit.");
-                Bank.Instance.deposit(_id, _amount);
+                Bank.Instance[_id].Deposit(_amount);
             }
             else if (_choice == 'c')
             {
                 askForAmount("Enter amount you would like to withdraw.");
-                Bank.Instance.withdraw(_id, _amount);
+                Bank.Instance[_id].Withdraw(_amount);
             }
             else
             {
-                int toId;
-                askForId("Enter the id of the account you would like to transfer to.", out toId);
+                askForId("Enter the id of the account you would like to transfer to.", out var toId);
                 if (!validAccountCheck(toId)) continue;
                 askForAmount("Enter the amount you would like to transfer.");
-                Bank.Instance.withdraw(_id, _amount);
-                Bank.Instance.deposit(toId, _amount);
+                Bank.Instance[_id].Withdraw(_amount);
+                Bank.Instance[toId].Deposit(_amount);
             }
         }
     }
@@ -98,7 +88,7 @@
     }
     private bool validAccountCheck(int id)
     {
-        if (!Bank.Instance.accountExists(id))
+        if (!Bank.Instance.AccountExists(id))
         {
             Console.WriteLine("Account does not exist, please re-select option and try again.");
             return false;

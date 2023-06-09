@@ -1,1 +1,2 @@
-﻿App.Instance.startApp();
+﻿
+Simple_Banking_System.App.Instance.startApp();
