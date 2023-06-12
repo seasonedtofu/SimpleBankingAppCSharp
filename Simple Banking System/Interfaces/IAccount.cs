@@ -1,11 +1,8 @@
-﻿interface IAccount
+﻿namespace Simple_Banking_System;
+
+public interface IAccount
 {
-    public int Number
-    { get; set; }
-    public string Name
-    { get; set; }
-    public decimal Balance
-    { get; set; }
-    public decimal withdraw(decimal amount);
-    public decimal deposit(decimal amount);
+    int Number { get; }
+    string Name { get; }
+    decimal Balance { get; set; }
 }

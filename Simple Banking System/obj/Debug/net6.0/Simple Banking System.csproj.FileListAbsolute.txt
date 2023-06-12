@@ -13,3 +13,18 @@ C:\Users\azhu\source\repos\Simple Banking System\Simple Banking System\obj\Debug
 C:\Users\azhu\source\repos\Simple Banking System\Simple Banking System\obj\Debug\net6.0\Simple Banking System.pdb
 C:\Users\azhu\source\repos\Simple Banking System\Simple Banking System\obj\Debug\net6.0\Simple Banking System.genruntimeconfig.cache
 C:\Users\azhu\source\repos\Simple Banking System\Simple Banking System\obj\Debug\net6.0\ref\Simple Banking System.dll
+C:\Repos\SimpleBankingAppCSharp\Simple Banking System\bin\Debug\net6.0\Simple Banking System.exe
+C:\Repos\SimpleBankingAppCSharp\Simple Banking System\bin\Debug\net6.0\Simple Banking System.deps.json
+C:\Repos\SimpleBankingAppCSharp\Simple Banking System\bin\Debug\net6.0\Simple Banking System.runtimeconfig.json
+C:\Repos\SimpleBankingAppCSharp\Simple Banking System\bin\Debug\net6.0\Simple Banking System.dll
+C:\Repos\SimpleBankingAppCSharp\Simple Banking System\bin\Debug\net6.0\Simple Banking System.pdb
+C:\Repos\SimpleBankingAppCSharp\Simple Banking System\obj\Debug\net6.0\Simple Banking System.csproj.AssemblyReference.cache
+C:\Repos\SimpleBankingAppCSharp\Simple Banking System\obj\Debug\net6.0\Simple Banking System.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\SimpleBankingAppCSharp\Simple Banking System\obj\Debug\net6.0\Simple Banking System.AssemblyInfoInputs.cache
+C:\Repos\SimpleBankingAppCSharp\Simple Banking System\obj\Debug\net6.0\Simple Banking System.AssemblyInfo.cs
+C:\Repos\SimpleBankingAppCSharp\Simple Banking System\obj\Debug\net6.0\Simple Banking System.csproj.CoreCompileInputs.cache
+C:\Repos\SimpleBankingAppCSharp\Simple Banking System\obj\Debug\net6.0\Simple Banking System.dll
+C:\Repos\SimpleBankingAppCSharp\Simple Banking System\obj\Debug\net6.0\refint\Simple Banking System.dll
+C:\Repos\SimpleBankingAppCSharp\Simple Banking System\obj\Debug\net6.0\Simple Banking System.pdb
+C:\Repos\SimpleBankingAppCSharp\Simple Banking System\obj\Debug\net6.0\Simple Banking System.genruntimeconfig.cache
+C:\Repos\SimpleBankingAppCSharp\Simple Banking System\obj\Debug\net6.0\ref\Simple Banking System.dll
