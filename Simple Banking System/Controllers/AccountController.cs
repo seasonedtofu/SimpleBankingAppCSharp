@@ -7,11 +7,15 @@ public class AccountController: IAccountController
     public AccountController(IAccount account)
     {
         _account = account;
+        
+        Console.WriteLine(account.Balance);
+        Console.WriteLine(account.Name);
+        Console.WriteLine(account.Number);
     }
 
     public decimal CheckBalance() => _account.Balance;
     
-    public void Deposit(decimal amount) => _account.Balance += _account.Balance;
+    public void Deposit(decimal amount) => _account.Balance += amount;
 
     public void Withdraw(decimal amount)
     {

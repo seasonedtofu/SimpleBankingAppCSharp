@@ -8,7 +8,7 @@ class Account : IAccount
 
     public Account(string name, decimal balance = 0)
     {
-        Number = Bank.Instance.NextAccountIndex();
+        Number = BankController.NextAccountIndex();
         Name = name;
         Balance = balance;
     }
