@@ -4,14 +4,7 @@ public class AccountController: IAccountController
 { 
     readonly IAccount _account;
 
-    public AccountController(IAccount account)
-    {
-        _account = account;
-        
-        Console.WriteLine(account.Balance);
-        Console.WriteLine(account.Name);
-        Console.WriteLine(account.Number);
-    }
+    public AccountController(IAccount account) => _account = account;
 
     public decimal CheckBalance() => _account.Balance;
     
@@ -26,4 +19,5 @@ public class AccountController: IAccountController
         _account.Balance -= amount;
     }
 
+    public bool Active() => _account.Active;
 }
