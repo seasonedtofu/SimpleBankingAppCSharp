@@ -2,32 +2,28 @@ namespace Simple_Banking_System;
 
 public class BankController
 {
-    public IAccountController this[int key] => Bank.Instance.Accounts[key];
+    public IAccountController this[Guid key] => Bank.Instance.Accounts[key];
     
-    public static int NextAccountIndex() => Bank.Instance.Accounts.Count + 1;
+    public static bool AccountExists(Guid id) => Bank.Instance.Accounts.ContainsKey(id);
 
-    public static bool AccountExists(int id)
+    public static bool AccountActive(Guid id) => Bank.Instance.Accounts[id].Active();
+
+    public static Guid CreateAccount()
     {
-        var acc = Bank.Instance.Accounts[id];
-        return Bank.Instance.Accounts.ContainsKey(id);
-    }
-    
-    public static int CreateAccount()
-    {
-        Console.WriteLine("Enter your name:");
+        BankLogger.EnterName();
         string name = Console.ReadLine() ?? "";
         while (name.Length == 0)
         {
-            Console.WriteLine("Name length must be greater than 0, please re-enter.");
+            BankLogger.NameLength();
             name = Console.ReadLine() ?? "";
         }
         while (name.Any(c => char.IsDigit(c)))
         {
-            Console.WriteLine("Please enter only characters for name (no numbers).");
+            BankLogger.OnlyCharacters();
             name = Console.ReadLine() ?? "";
         }
         var account = new Account(name);
-        Bank.Instance.Accounts.Add(account.Number, new AccountController(account));
-        return account.Number;
+        Bank.Instance.Accounts.Add(account.Id, new AccountController(account));
+        return account.Id;
     }
 }
