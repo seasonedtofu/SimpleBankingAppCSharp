@@ -6,4 +6,6 @@ public interface IAccountController
     void Deposit(decimal amount);
     void Withdraw(decimal amount);
     bool Active();
+    void CloseAccount();
+    void ReopenAccount();
 }

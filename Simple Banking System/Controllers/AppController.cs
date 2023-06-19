@@ -21,7 +21,7 @@ public class AppController: IAppController
             
             switch (_app.Choice)
             {
-                case 'f':
+                case 'h':
                     return;
                 case 'a':
                     BankLogger.AccountNumberIs(BankController.CreateAccount());
@@ -48,8 +48,7 @@ public class AppController: IAppController
                     AskForAmount();
                     _app.BankController[_app.Id].Withdraw(_app.Amount);
                     break;
-                default:
-                {
+                case 'e':
                     BankLogger.AskForTransferId();
                     AskForId(out var toId);
                     if (!ValidAccountCheck(toId)) continue;
@@ -58,12 +57,17 @@ public class AppController: IAppController
                     _app.BankController[_app.Id].Withdraw(_app.Amount);
                     _app.BankController[toId].Deposit(_app.Amount);
                     break;
-                }
+                case 'f':
+                    _app.BankController[_app.Id].ReopenAccount();
+                    break;
+                case 'g':
+                    _app.BankController[_app.Id].CloseAccount();
+                    break;
             }
         }
     }
 
-    private static bool ValidChar(char c) => c is 'a' or 'b' or 'c' or 'd' or 'e' or 'f';
+    private static bool ValidChar(char c) => c is 'a' or 'b' or 'c' or 'd' or 'e' or 'f' or 'g' or 'h';
 
     private void AskForId(out Guid id)
     {
