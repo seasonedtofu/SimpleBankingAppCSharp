@@ -29,7 +29,7 @@ public class AccountController: IAccountController
         BankLogger.CloseAccountPrompt();
         var answer = Console.ReadKey().KeyChar;
 
-        while (!YesOrNo(answer))
+        while (!Validator.YesOrNo(answer))
         {
             BankLogger.EnterValidYesOrNo();
             answer = Console.ReadKey().KeyChar;
@@ -48,6 +48,4 @@ public class AccountController: IAccountController
         }
         BankLogger.AccountAlreadyActive();
     }
-
-    private static bool YesOrNo(char c) => c is 'Y' or 'y' or 'N' or 'n';
 }

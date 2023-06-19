@@ -12,7 +12,7 @@ public class AppController: IAppController
             _app.Choice = Console.ReadKey().KeyChar;
             BankLogger.NewLine();
             
-            while (!ValidChar(_app.Choice))
+            while (!Validator.ValidPromptChar(_app.Choice))
             {
                 BankLogger.InvalidChoice();
                 _app.Choice = Console.ReadKey().KeyChar;
@@ -66,8 +66,6 @@ public class AppController: IAppController
             }
         }
     }
-
-    private static bool ValidChar(char c) => c is 'a' or 'b' or 'c' or 'd' or 'e' or 'f' or 'g' or 'h';
 
     private void AskForId(out Guid id)
     {
