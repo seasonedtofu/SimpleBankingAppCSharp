@@ -1,3 +1,2 @@
-﻿using Simple_Banking_System;
-
-new AppController().StartApp();
+﻿
+Simple_Banking_System.App.Instance.startApp();
