@@ -29,10 +29,8 @@ public abstract class BankLogger
     public static void EnterName() => Console.WriteLine("Enter your name:");
     public static void NameLength() => Console.WriteLine("Name length must be greater than 0, please re-enter.");
     public static void OnlyCharacters() => Console.WriteLine("Please enter only characters for name (no numbers).");
-
     public static void CloseAccountPrompt() => Console.WriteLine("Are you sure you want to close this account?");
     public static void CloseAccountBalance() => Console.WriteLine("Please withdraw all your money before closing the account. Y/N");
     public static void AccountAlreadyActive() => Console.WriteLine("Account is already active.");
-
     public static void EnterValidYesOrNo() => Console.WriteLine("Invalid input, please enter one of the following: 'Y', 'y', 'N', 'n'.");
 }
