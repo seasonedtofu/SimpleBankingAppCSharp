@@ -2,7 +2,7 @@ namespace Simple_Banking_System;
 
 public class AppController: IAppController
 {
-    private App _app = Simple_Banking_System.App.Instance;
+    private readonly App _app = App.Instance;
     
     public void StartApp()
     {

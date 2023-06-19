@@ -1,3 +1,4 @@
 ﻿using Simple_Banking_System;
 
-new AppController().StartApp();
+AppController appController = new ();
+appController.StartApp();
