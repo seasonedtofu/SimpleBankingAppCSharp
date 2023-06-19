@@ -2,5 +2,5 @@
 
 public interface IApp
 {
-    public void StartApp();
+    public void startApp();
 }

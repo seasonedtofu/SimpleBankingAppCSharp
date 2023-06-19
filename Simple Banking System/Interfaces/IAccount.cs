@@ -2,8 +2,7 @@
 
 public interface IAccount
 {
-    Guid Id { get; }
+    int Number { get; }
     string Name { get; }
     decimal Balance { get; set; }
-    bool Active { get; set; }
 }
