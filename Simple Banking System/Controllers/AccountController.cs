@@ -20,6 +20,7 @@ public class AccountController: IAccountController
     }
 
     public bool Active() => _account.Active;
+    
     public void CloseAccount() {
         if (CheckBalance() > 0)
         {

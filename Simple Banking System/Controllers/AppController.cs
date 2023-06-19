@@ -76,6 +76,7 @@ public class AppController: IAppController
             success = Guid.TryParse(Console.ReadLine(), out id);
         }
     }
+    
     private void AskForAmount()
     {
         var success = decimal.TryParse(Console.ReadLine(), out var amount);
@@ -87,6 +88,7 @@ public class AppController: IAppController
 
         _app.Amount = amount;
     }
+    
     private static bool ValidAccountCheck(Guid id)
     {
         if (!BankController.AccountExists(id))
